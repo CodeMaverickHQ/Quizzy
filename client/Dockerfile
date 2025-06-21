@@ -1,11 +1,14 @@
 FROM node:20-alpine as build
 WORKDIR /app
-COPY package*.json ./
+
+# Copy package.json from client folder relative to repo root (the build context)
+COPY client/package*.json ./
 RUN npm install
-COPY . .
+
+COPY client/. .
 RUN npm run build
 
 FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"] 
+CMD ["nginx", "-g", "daemon off;"]
