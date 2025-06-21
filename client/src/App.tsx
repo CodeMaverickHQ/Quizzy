@@ -77,7 +77,7 @@ function CreateGame({ onGameCreated }: { onGameCreated: (socket: Socket, gameId:
         timeLimit: q.timeLimit ?? 30,
       }));
     }
-    const newSocket = io('http://srv-captain--quizzy-backend');
+    const newSocket = io('http://srv-captain--quizzy-backend:3000');
     const quiz = {
       id: '1',
       title: 'Custom Quiz',
