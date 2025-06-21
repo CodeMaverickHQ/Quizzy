@@ -274,7 +274,7 @@ function MainApp({ socket, gameId, isHost, setSocket, setGameId }: { socket: Soc
       return;
     }
 
-    const newSocket = io('http://localhost:3000');
+    const newSocket = io('https://quizzy-backend.operdesk.com');
     setSocket(newSocket);
 
     newSocket.emit('joinGame', { gameId, username });
