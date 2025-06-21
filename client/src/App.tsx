@@ -347,7 +347,7 @@ function MainApp({ socket, gameId, isHost, setSocket, setGameId }: { socket: Soc
     <Box minH="100vh" bg="gray.50" py={8}>
       <Container maxW="container.xl">
         <VStack gap={8}>
-          <Heading size="2xl" color="purple.600">Kahoot Clone</Heading>
+          <Heading size="2xl" color="purple.600">Quizzy</Heading>
 
           {!socket ? (
             <Box w="100%" maxW="600px" p={6} borderRadius="lg" boxShadow="lg" bg="white">
